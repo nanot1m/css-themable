@@ -1,0 +1,29 @@
+@import "../styles/_spacing";
+
+.root {
+  @include space(
+    (
+      my: 8,
+      px: 8,
+      py: 4
+    )
+  );
+}
+
+.title {
+  @include space(
+    (
+      px: 8,
+      py: 4,
+      mb: 2
+    )
+  );
+}
+
+.bordered {
+  border: 1px solid blue;
+}
+
+.bordered > .bordered {
+  border: 1px solid red;
+}

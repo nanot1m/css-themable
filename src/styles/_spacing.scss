@@ -1,0 +1,80 @@
+$space-factor: 4px;
+
+@function space($factor) {
+  @return $space-factor * $factor;
+}
+
+@mixin paddings($i) {
+  %p-#{$i} {
+    padding: space($i);
+  }
+
+  %px-#{$i} {
+    padding-left: space($i);
+    padding-right: space($i);
+  }
+
+  %pl-#{$i} {
+    padding-left: space($i);
+  }
+
+  %pr-#{$i} {
+    padding-right: space($i);
+  }
+
+  %py-#{$i} {
+    padding-top: space($i);
+    padding-bottom: space($i);
+  }
+
+  %pt-#{$i} {
+    padding-top: space($i);
+  }
+
+  %pb-#{$i} {
+    padding-bottom: space($i);
+  }
+}
+
+@mixin margins($i) {
+  %m-#{$i} {
+    margin: space($i);
+  }
+
+  %mx-#{$i} {
+    margin-left: space($i);
+    margin-right: space($i);
+  }
+
+  %ml-#{$i} {
+    margin-left: space($i);
+  }
+
+  %mr-#{$i} {
+    margin-right: space($i);
+  }
+
+  %my-#{$i} {
+    margin-top: space($i);
+    margin-bottom: space($i);
+  }
+
+  %mt-#{$i} {
+    margin-top: space($i);
+  }
+
+  %mb-#{$i} {
+    margin-bottom: space($i);
+  }
+}
+
+@for $i from 0 to 11 {
+  @include paddings($i);
+  @include margins($i);
+}
+
+@mixin space($map) {
+  @each $name, $factor in $map {
+    @extend %#{$name}-#{$factor};
+  }
+}
