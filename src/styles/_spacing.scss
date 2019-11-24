@@ -1,7 +1,9 @@
-$space-factor: 4px;
+:root {
+  --space-factor: 4px;
+}
 
 @function space($factor) {
-  @return $space-factor * $factor;
+  @return calc(var(--space-factor) * #{$factor});
 }
 
 @mixin paddings($i) {
