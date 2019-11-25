@@ -1,0 +1,71 @@
+:root {
+  --color-base-light: #fff;
+  --color-base-brand: #fc0;
+  --color-base-interactive-raw: 0, 68, 187;
+  --color-base-interactive: rgb(var(--color-base-interactive-raw));
+
+  /* Text colors */
+  --color-text-primary: #333;
+  --color-text-invert: var(--color-base-light);
+  --color-text-secondary: #999;
+  --color-link: var(--color-base-interactive);
+  --color-link-secondary: #669;
+  --color-link-hover: #d00;
+  --color-text-alert: #f00;
+  --color-text-highlight: #c60;
+  --color-text-success: #090;
+
+  /* Background colors */
+  --color-bg-light: var(--color-base-light);
+  --color-bg-basic: #f8f8f8;
+  --color-bg-highlight: #ffeba0;
+  --color-bg-highlight-hover: #f7d65f;
+  --color-bg-highlight-active: #f2c200;
+  --color-bg-attention-raw: 255, 51, 51;
+  --color-bg-attention: rgb(var(--color-bg-attention-raw));
+  --color-bg-label-primary: #00bf27;
+  --color-bg-label-secondary: #0b77e3;
+  --color-bg-label-neutral: #e9ecef;
+  --color-bg-control-primary: var(--color-base-brand);
+  --color-bg-control-primary-hover: #f2c200;
+  --color-bg-control-primary-outline: #b38f00;
+  --color-bg-control-secondary: #e6e6e6;
+  --color-bg-control-secondary-dark: #d9d9d9;
+  --color-bg-intent: rgba(var(--color-base-interactive-raw), 0.1);
+  --color-bg-intent-hover: rgba(var(--color-base-interactive-raw), 0.15);
+  --color-bg-control-alert: rgba(var(--color-bg-attention-raw), 0.15);
+  --color-bg-control-alert-hover: rgba(var(--color-bg-attention-raw), 0.2);
+}
+
+@function color($name) {
+  @return var(--color-#{$name});
+}
+
+$bg-colors: bg-light, bg-basic, bg-highlight, bg-highlight-hover,
+  bg-highlight-active, bg-attention, bg-label-primary, bg-label-secondary,
+  bg-label-neutral, bg-control-primary, bg-control-primary-hover,
+  bg-control-primary-outline, bg-control-secondary, bg-control-secondary-dark,
+  bg-intent, bg-intent-hover, bg-control-alert, bg-control-alert-hover;
+
+@each $bg-color in $bg-colors {
+  %#{$bg-color} {
+    background-color: color($bg-color);
+  }
+}
+
+@mixin bg($bg-color) {
+  @extend %#{$bg-color};
+}
+
+$text-colors: text-primary, text-invert, text-secondary, link, link-secondary,
+  link-hover, text-alert, text-highlight, text-success;
+
+@each $text-color in $text-colors {
+  %#{$text-color} {
+    color: color($text-color);
+  }
+}
+
+@mixin color($text-color) {
+  @extend %#{$text-color};
+}

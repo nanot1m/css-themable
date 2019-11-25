@@ -1,4 +1,5 @@
 @import "../styles/_spacing";
+@import "../styles/_colors";
 
 .root {
   @include space(
@@ -7,6 +8,7 @@
       py: 4
     )
   );
+  @include bg(bg-control-primary);
 }
 
 .title {
@@ -17,12 +19,6 @@
       mb: 2
     )
   );
-}
-
-.bordered {
-  border: 1px solid blue;
-}
-
-.bordered > .bordered {
-  border: 1px solid red;
+  @include bg(bg-label-secondary);
+  @include color(text-invert);
 }

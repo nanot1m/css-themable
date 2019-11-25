@@ -1,0 +1,14 @@
+@import "../styles/colors";
+
+.link {
+  @include color(link);
+  text-decoration: none;
+}
+
+.link:hover {
+  @include color(link-hover);
+}
+
+.link:active {
+  @include color(link-secondary);
+}

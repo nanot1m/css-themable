@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 import styles from "./index.module.scss";
+import { Link } from "../Link";
 
 export function App() {
   const [factor, setFactor] = useState(8);
@@ -16,6 +17,8 @@ export function App() {
       <div className={`${styles.root} ${styles.bordered}`}>
         <div className={`${styles.title} ${styles.bordered}`}>Hello world</div>
       </div>
+
+      <Link href="#">Simple link</Link>
     </div>
   );
 }
