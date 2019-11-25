@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/css-themable/precache-manifest.23594e174aa4cc92bd25ea56220e99d1.js"
+  "/css-themable/precache-manifest.9512e44bfa3c19a1390453816519d02d.js"
 );
 
 self.addEventListener('message', (event) => {
